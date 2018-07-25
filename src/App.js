@@ -1,29 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import RyAppBar from './components/AppBar/AppBar';
-import InfoCard from './components/InfoCard';
-import {teal, amber, grey} from '@material-ui/core/colors/'
-import 'typeface-roboto'
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#545453'
-    },
-    secondary: {
-      main: '#191E2E'
-    },
-    text: {
-      primary: '#FFFFFF'
-    }
-  }
-});
+import Theme from './utils/Theme';
 
 class App extends Component {
   render() {
     return (
-      <MuiThemeProvider theme={theme} className="App">
+      <MuiThemeProvider theme={Theme} className="App">
           <RyAppBar/>
       </MuiThemeProvider>
     );
