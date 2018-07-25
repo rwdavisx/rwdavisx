@@ -17,7 +17,7 @@ const styles = {
   },
   link: {
     alignSelf: 'center',
-    'padding-left': 10,
+    'padding': 5,
   }
 };
 
@@ -31,19 +31,19 @@ const RyAppBar = props => {
             <RyLogo className={classes.logo}/>
           </Grid>
           <Grid item sm={2} xs={12} className={classes.link}>
-            <Button fullWidth>HOME</Button>
+            <Button variant='outlined' style={{border: '2px #35c19b solid'}} fullWidth>HOME</Button>
           </Grid>
           <Grid item sm={2} xs={12} className={classes.link}>
-            <Button fullWidth>INTERESTS</Button>
+            <Button variant='outlined' style={{border: '2px #35c19b solid'}} fullWidth>INTERESTS</Button>
           </Grid>
           <Grid item sm={2} xs={12} className={classes.link}>
-            <Button fullWidth>ABOUT</Button>
+            <Button variant='outlined' style={{border: '2px #35c19b solid'}} fullWidth>ABOUT</Button>
           </Grid>
           <Grid item sm={2} xs={12} className={classes.link}>
-            <Button fullWidth>RESUME</Button>
+            <Button variant='outlined' style={{border: '2px #35c19b solid'}} fullWidth>RESUME</Button>
           </Grid>
           <Grid item sm={2} xs={12} className={classes.link}>
-            <Button fullWidth>CONTACT</Button>
+            <Button variant='outlined' style={{border: '2px #35c19b solid'}} fullWidth>CONTACT</Button>
           </Grid>
         </Grid>
       </Toolbar>
