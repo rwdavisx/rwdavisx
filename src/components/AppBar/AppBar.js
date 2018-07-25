@@ -27,22 +27,22 @@ const RyAppBar = props => {
     <AppBar classes={classes.root} position={'static'}>
       <Toolbar>
         <Grid container spacing={12}>
-          <Grid item md={4} sm={2} xs={12}>
+          <Grid item md={2} sm={2} xs={12}>
             <RyLogo className={classes.logo}/>
           </Grid>
-          <Grid item md={1} sm={2} xs={12} className={classes.link}>
+          <Grid item sm={2} xs={12} className={classes.link}>
             <Button fullWidth>HOME</Button>
           </Grid>
-          <Grid item md={1} sm={2} xs={12} className={classes.link}>
+          <Grid item sm={2} xs={12} className={classes.link}>
             <Button fullWidth>INTERESTS</Button>
           </Grid>
-          <Grid item md={1} sm={2} xs={12} className={classes.link}>
+          <Grid item sm={2} xs={12} className={classes.link}>
             <Button fullWidth>ABOUT</Button>
           </Grid>
-          <Grid item md={1} sm={2} xs={12} className={classes.link}>
+          <Grid item sm={2} xs={12} className={classes.link}>
             <Button fullWidth>RESUME</Button>
           </Grid>
-          <Grid item md={1} sm={2} xs={12} className={classes.link}>
+          <Grid item sm={2} xs={12} className={classes.link}>
             <Button fullWidth>CONTACT</Button>
           </Grid>
         </Grid>
