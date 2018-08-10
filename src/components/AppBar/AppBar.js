@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
-import RyLogo from '../../svg/RyLogo';
+import RwdLogo from '../../svg/RwdLogo';
 
 const styles = theme => ({
   root: {
@@ -14,20 +14,25 @@ const styles = theme => ({
   },
   logoContainer: {
     display: 'flex',
+    height: 72,
     justifyContent: 'left',
     [theme.breakpoints.down('xs')]: {
       justifyContent: 'center'
     }
   },
   logo: {
-    fontSize: 48
+    color: theme.colors.green,
+    height: '100%',
+    width: '100%'
   },
   link: {
     alignSelf: 'center'
   },
   btn: {
+    color: theme.palette.text.secondary,
     '&:hover': {
-      color: theme.colors.green
+      color: theme.colors.green,
+      backgroundColor: 'transparent'
     }
   }
 });
@@ -35,11 +40,11 @@ const styles = theme => ({
 const RyAppBar = props => {
   const { classes } = props;
   return (
-    <AppBar classes={classes.root} position={'static'}>
+    <AppBar classes={classes.root} position={'sticky'}>
       <Toolbar>
         <Grid container spacing='8'>
           <Grid item sm={2} xs={12} className={classes.logoContainer}>
-            <RyLogo className={classes.logo}/>
+            <RwdLogo className={classes.logo}/>
           </Grid>
           <Grid item sm={2} xs={12} className={classes.link}>
             <Button variant='flat' className={classes.btn} fullWidth>HOME</Button>
