@@ -7,13 +7,16 @@ import MusicIcon from '@material-ui/icons/MusicNote';
 import ComputerIcon from '@material-ui/icons/Computer';
 import Button from '@material-ui/core/Button/Button';
 import Typography from '@material-ui/core/Typography'
+import backgroundImg from '../../images/abstract-background.jpeg';
 
 const styles = theme => ({
   root: {},
   headerContainer: {
-    marginTop: theme.spacing.unit * 8,
+    background: `url(${backgroundImg})`,
+    paddingTop: theme.spacing.unit * 8,
     paddingRight: theme.spacing.unit * 4,
-    paddingLeft: theme.spacing.unit * 4
+    paddingLeft: theme.spacing.unit * 4,
+    paddingBottom: theme.spacing.unit * 8
   },
   titleContainer: {
     marginTop: 20,
@@ -63,7 +66,8 @@ const Intro = props => {
           </Grid>
           <Grid sm item>
             <Typography className={classes.headerDescription} variant='display4'>
-              Explore my passions |<br/>discover something new
+              <span>Explore my passions |<br/></span>
+              <span>discover something new</span>
             </Typography>
           </Grid>
         </Grid>
@@ -71,24 +75,42 @@ const Intro = props => {
           <Grid item xs={12} sm={4} className={classes.cardContainer}>
             <Card className={classes.introCard}>
               <Button fullWidth className={classes.interestButton}>
-                <MusicIcon style={{ fontSize: 72 }}/>
-                <span>Music</span>
+                <Grid container>
+                <Grid item xs={12}>
+                  <MusicIcon style={{ fontSize: 72 }}/>
+                </Grid>
+                <Grid item xs={12}>
+                  <span>Music</span>
+                </Grid>
+                </Grid>
               </Button>
             </Card>
           </Grid>
           <Grid item xs={12} sm={4} className={classes.cardContainer}>
             <Card className={classes.introCard}>
               <Button fullWidth className={classes.interestButton}>
-                <ComputerIcon style={{ fontSize: 72 }}/>
-                <span>Technology</span>
+                <Grid container>
+                  <Grid item xs={12}>
+                    <ComputerIcon style={{ fontSize: 72 }}/>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <span>Technology</span>
+                  </Grid>
+                </Grid>
               </Button>
             </Card>
           </Grid>
           <Grid item xs={12} sm={4} className={classes.cardContainer}>
             <Card className={classes.introCard}>
               <Button fullWidth className={classes.interestButton}>
-                <RunIcon style={{ fontSize: 72 }}/>
-                <span>Adventures</span>
+                <Grid container>
+                  <Grid item xs={12}>
+                    <RunIcon style={{ fontSize: 72 }}/>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <span>Adventures</span>
+                  </Grid>
+                </Grid>
               </Button>
             </Card>
           </Grid>

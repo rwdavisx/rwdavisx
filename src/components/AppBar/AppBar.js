@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
+import Hidden from '@material-ui/core/Hidden';
 import RwdLogo from '../../svg/RwdLogo';
 
 const styles = theme => ({
@@ -14,24 +15,29 @@ const styles = theme => ({
   },
   logoContainer: {
     display: 'flex',
-    height: 72,
     justifyContent: 'left',
     [theme.breakpoints.down('xs')]: {
-      justifyContent: 'center'
+      justifyContent: 'left'
     }
   },
+  menu: {
+    display: 'flex',
+    justifyContent: 'right'
+  },
   logo: {
-    color: theme.colors.green,
-    height: '100%',
+    color: theme.palette.secondary.main,
+    height: 72,
     width: '100%'
   },
   link: {
-    alignSelf: 'center'
+    alignSelf: 'center',
+    height: '100%'
   },
   btn: {
     color: theme.palette.text.secondary,
+    padding: 0,
     '&:hover': {
-      color: theme.colors.green,
+      color: theme.palette.secondary.main,
       backgroundColor: 'transparent'
     }
   }
@@ -43,24 +49,33 @@ const RyAppBar = props => {
     <AppBar classes={classes.root} position={'sticky'}>
       <Toolbar>
         <Grid container spacing='8'>
-          <Grid item sm={2} xs={12} className={classes.logoContainer}>
+          <Grid item md={2} xs={4} style={{ padding: 0 }} className={classes.logoContainer}>
             <RwdLogo className={classes.logo}/>
           </Grid>
-          <Grid item sm={2} xs={12} className={classes.link}>
-            <Button variant='flat' className={classes.btn} fullWidth>HOME</Button>
-          </Grid>
-          <Grid item sm={2} xs={12} className={classes.link}>
-            <Button variant='flat' className={classes.btn} fullWidth>INTERESTS</Button>
-          </Grid>
-          <Grid item sm={2} xs={12} className={classes.link}>
-            <Button variant='flat' className={classes.btn} fullWidth>ABOUT</Button>
-          </Grid>
-          <Grid item sm={2} xs={12} className={classes.link}>
-            <Button variant='flat' className={classes.btn} fullWidth>RESUME</Button>
-          </Grid>
-          <Grid item sm={2} xs={12} className={classes.link}>
-            <Button variant='text' className={classes.btn} fullWidth>CONTACT</Button>
-          </Grid>
+          <Hidden mdDown>
+            <Grid item md={2} className={classes.link}>
+              <Button variant='flat' className={classes.btn} fullWidth>HOME</Button>
+            </Grid>
+            <Grid item md={2} className={classes.link}>
+              <Button variant='flat' className={classes.btn} fullWidth>INTERESTS</Button>
+            </Grid>
+            <Grid item md={2} className={classes.link}>
+              <Button variant='flat' className={classes.btn} fullWidth>ABOUT</Button>
+            </Grid>
+            <Grid item md={2} className={classes.link}>
+              <Button variant='flat' className={classes.btn} fullWidth>RESUME</Button>
+            </Grid>
+            <Grid item md={2} className={classes.link}>
+              <Button variant='text' className={classes.btn} fullWidth>CONTACT</Button>
+            </Grid>
+          </Hidden>
+          <Hidden mdUp>
+            <Grid item xs={4} className={classes.menu}>
+              <Button variant='text' className={classes.btn} fullWidth>
+                MENU
+              </Button>
+            </Grid>
+          </Hidden>
         </Grid>
       </Toolbar>
     </AppBar>
