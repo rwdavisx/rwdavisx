@@ -5,17 +5,19 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
-import RwdLogo from '../../svg/RwdLogo';
+import Typography from '@material-ui/core/Typography';
+import CodeIcon from '@material-ui/icons/Code';
+import SideDrawer from './SideDrawer/SideDrawer';
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
-    justifyContent: 'space-between',
-    alignItems: 'center'
+    // height: 60,
+    // alignItems: 'center',
   },
   logoContainer: {
     display: 'flex',
-    justifyContent: 'left',
+    justifyContent: 'center',
+    textAlign: 'center',
     [theme.breakpoints.down('xs')]: {
       justifyContent: 'left'
     }
@@ -25,13 +27,22 @@ const styles = theme => ({
     justifyContent: 'right'
   },
   logo: {
-    color: theme.palette.secondary.main,
-    height: 72,
+    display: 'flex',
+    alignItems: 'center',
+    '&:hover': {
+      color: theme.palette.secondary.main,
+      backgroundColor: 'transparent'
+    }
+  },
+  menuIcon: {
+    color: theme.palette.text.secondary,
+    height: 48,
     width: '100%'
   },
   link: {
     alignSelf: 'center',
-    height: '100%'
+    height: '100%',
+    padding: 0
   },
   btn: {
     color: theme.palette.text.secondary,
@@ -46,24 +57,28 @@ const styles = theme => ({
 const RyAppBar = props => {
   const { classes } = props;
   return (
-    <AppBar classes={classes.root} position={'sticky'}>
-      <Toolbar>
-        <Grid container spacing='8'>
-          <Grid item md={2} xs={4} style={{ padding: 0 }} className={classes.logoContainer}>
-            <RwdLogo className={classes.logo}/>
+    <AppBar position={'sticky'}>
+      <Toolbar variant='dense'>
+        <Grid container alignContent={'space-between'} spacing={8}>
+          <Grid item md={2} xs={4} className={classes.link}>
+            <a className={classes.logo}>
+              <CodeIcon viewBox='-10 0 24 24'/>
+              <Typography color={'textSecondary'}>RwD</Typography>
+              <CodeIcon viewBox='10 0 24 24'/>
+            </a>
           </Grid>
-          <Hidden mdDown>
+          <Hidden smDown>
             <Grid item md={2} className={classes.link}>
-              <Button variant='flat' className={classes.btn} fullWidth>HOME</Button>
+              <Button variant='text' className={classes.btn} fullWidth>HOME</Button>
             </Grid>
             <Grid item md={2} className={classes.link}>
-              <Button variant='flat' className={classes.btn} fullWidth>INTERESTS</Button>
+              <Button variant='text' className={classes.btn} fullWidth>INTERESTS</Button>
             </Grid>
             <Grid item md={2} className={classes.link}>
-              <Button variant='flat' className={classes.btn} fullWidth>ABOUT</Button>
+              <Button variant='text' className={classes.btn} fullWidth>ABOUT</Button>
             </Grid>
             <Grid item md={2} className={classes.link}>
-              <Button variant='flat' className={classes.btn} fullWidth>RESUME</Button>
+              <Button variant='text' className={classes.btn} fullWidth>RESUME</Button>
             </Grid>
             <Grid item md={2} className={classes.link}>
               <Button variant='text' className={classes.btn} fullWidth>CONTACT</Button>
@@ -71,9 +86,7 @@ const RyAppBar = props => {
           </Hidden>
           <Hidden mdUp>
             <Grid item xs={4} className={classes.menu}>
-              <Button variant='text' className={classes.btn} fullWidth>
-                MENU
-              </Button>
+              <SideDrawer/>
             </Grid>
           </Hidden>
         </Grid>

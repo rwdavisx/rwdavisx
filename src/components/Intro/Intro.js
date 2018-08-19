@@ -45,7 +45,7 @@ const styles = theme => ({
   },
   introCard: {
     width: '100%',
-    height: 300,
+    height: 150,
     backgroundColor: theme.palette.primary.main
   },
   introCardIcon: {
