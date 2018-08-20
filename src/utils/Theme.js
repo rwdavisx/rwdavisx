@@ -21,7 +21,8 @@ const Theme = createMuiTheme({
   colors: {
     orange: '#FF4533',
     red: '#E51339',
-    white: '#FFFFFF'
+    white: '#FFFFFF',
+    navy: '#212e41',
   },
   typography: {
     fontFamily: "'Open Sans', sans-serif"
