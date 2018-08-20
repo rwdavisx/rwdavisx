@@ -27,8 +27,11 @@ const styles = theme => ({
   },
   menuIcon: {
     color: theme.palette.text.secondary,
-    height: 72,
-    width: '100%'
+    padding: 8,
+    '&:hover': {
+      color: theme.palette.secondary.main,
+      backgroundColor: 'transparent'
+    }
   }
 });
 
@@ -47,7 +50,7 @@ class SideDrawer extends React.Component {
     const sideList = (
       <div className={classes.list}>
         <List>
-          <ListItem style={{textAlign: 'center'}} button>Home</ListItem>
+          <ListItem button>Home</ListItem>
           <ListItem button>Interests</ListItem>
           <ListItem button>About</ListItem>
           <ListItem button>Resume</ListItem>
@@ -60,7 +63,7 @@ class SideDrawer extends React.Component {
         <Button variant='text' className={classes.btn} fullWidth
                 onClick={this.toggleDrawer('right', true)}
         >
-          <MenuIcon className={classes.menuIcon}/>
+          <MenuIcon fontSize={24} className={classes.menuIcon}/>
         </Button>
         <Drawer
           variant="temporary"

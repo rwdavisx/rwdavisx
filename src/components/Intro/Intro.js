@@ -6,7 +6,7 @@ import RunIcon from '@material-ui/icons/DirectionsRun';
 import MusicIcon from '@material-ui/icons/MusicNote';
 import ComputerIcon from '@material-ui/icons/Computer';
 import Button from '@material-ui/core/Button/Button';
-import Typography from '@material-ui/core/Typography'
+import Typography from '@material-ui/core/Typography';
 import backgroundImg from '../../images/abstract-background.jpeg';
 
 const styles = theme => ({
@@ -24,7 +24,10 @@ const styles = theme => ({
     paddingBottom: 32
   },
   headerTitle: {
-    margin: 0
+    width: 'fit-content',
+    padding: 8,
+    borderBottom: `2px solid ${theme.palette.secondary.main}`,
+    borderTop: `2px solid ${theme.palette.secondary.main}`,
   },
   headerDescription: {
     marginTop: 20,
@@ -36,9 +39,9 @@ const styles = theme => ({
     height: '100%',
     color: 'white',
     '&:hover': {
-      color: '#FFFFFFAA',
+      color: theme.palette.secondary.main,
       backgroundColor: 'transparent'
-    },
+    }
   },
   cardContainer: {
     padding: 2.5
@@ -49,7 +52,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.primary.main
   },
   introCardIcon: {
-    color: theme.palette.text.primary,
+    color: theme.palette.text.primary
   }
 });
 
@@ -66,22 +69,22 @@ const Intro = props => {
           </Grid>
           <Grid sm item>
             <Typography className={classes.headerDescription} variant='display4'>
-              <span>Explore my passions |<br/></span>
-              <span>discover something new</span>
+              <span>Some header text<br/></span>
+              <span>Dont know what yet<br/></span>
             </Typography>
           </Grid>
         </Grid>
-        <Grid container item sm={12}>
+        <Grid container item sm={12} justify='space-around'>
           <Grid item xs={12} sm={4} className={classes.cardContainer}>
             <Card className={classes.introCard}>
               <Button fullWidth className={classes.interestButton}>
                 <Grid container>
-                <Grid item xs={12}>
-                  <MusicIcon style={{ fontSize: 72 }}/>
-                </Grid>
-                <Grid item xs={12}>
-                  <span>Music</span>
-                </Grid>
+                  <Grid item xs={12}>
+                    <MusicIcon style={{ fontSize: 72 }}/>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <span>Music</span>
+                  </Grid>
                 </Grid>
               </Button>
             </Card>

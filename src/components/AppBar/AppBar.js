@@ -10,10 +10,6 @@ import CodeIcon from '@material-ui/icons/Code';
 import SideDrawer from './SideDrawer/SideDrawer';
 
 const styles = theme => ({
-  root: {
-    // height: 60,
-    // alignItems: 'center',
-  },
   logoContainer: {
     display: 'flex',
     justifyContent: 'center',
@@ -24,7 +20,7 @@ const styles = theme => ({
   },
   menu: {
     display: 'flex',
-    justifyContent: 'right'
+    justifyContent: 'flex-end'
   },
   logo: {
     display: 'flex',
@@ -33,11 +29,6 @@ const styles = theme => ({
       color: theme.palette.secondary.main,
       backgroundColor: 'transparent'
     }
-  },
-  menuIcon: {
-    color: theme.palette.text.secondary,
-    height: 48,
-    width: '100%'
   },
   link: {
     alignSelf: 'center',
@@ -59,7 +50,7 @@ const RyAppBar = props => {
   return (
     <AppBar position={'sticky'}>
       <Toolbar variant='dense'>
-        <Grid container alignContent={'space-between'} spacing={8}>
+        <Grid container justify='space-between' spacing={8}>
           <Grid item md={2} xs={4} className={classes.link}>
             <a className={classes.logo}>
               <CodeIcon viewBox='-10 0 24 24'/>
