@@ -3,115 +3,67 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
-import Button from '@material-ui/core/Button';
-import FB from './svg/F_icon.svg';
-import Instagram from './svg/Instagram.svg';
-import Twitter from './svg/TwitterIcon.svg';
-import SoundCloud from './svg/SoundcloudLogo.svg';
-import Steam from './svg/SteamIcon.svg';
+import CardMedia from '@material-ui/core/CardMedia';
 import SelfImg from '../../images/ry-self.JPG';
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
     background: theme.colors.navy,
-    height: 'auto',
-    width: 'auto'
-  },
-  contentCol: {
-    display: 'flex',
-    flexDirection: 'column'
-  },
-  header: {
     paddingTop: theme.spacing.unit * 4,
     paddingBottom: theme.spacing.unit * 4,
-    paddingLeft: theme.spacing.unit * 4,
-    paddingRight: theme.spacing.unit * 2
   },
   textContent: {
-    paddingTop: theme.spacing.unit * 4,
-    paddingBottom: theme.spacing.unit * 8,
-    paddingLeft: theme.spacing.unit * 6,
-    paddingRight: theme.spacing.unit * 2
+    paddingRight: theme.spacing.unit * 8
   },
-  photoContainer: {
-    paddingTop: theme.spacing.unit * 4,
-    paddingBottom: theme.spacing.unit * 2,
-    paddingLeft: theme.spacing.unit * 6,
-    paddingRight: theme.spacing.unit * 2,
-    background: 'transparent'
+  card: {
+    border: `4px solid ${theme.palette.secondary.main}`,
+    padding: 4
   },
-  photo: {
-    display: 'block',
-    maxHeight: 500,
-    maxWidth: '100%',
-    border: `4px solid ${theme.palette.secondary.main}`
-  },
-  linksContainer: {
-    flexGrow: 1,
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 4,
-    paddingLeft: theme.spacing.unit * 2,
-    paddingRight: theme.spacing.unit * 2
+  media: {
+    objectFit: 'cover',
   }
 });
 
 const AboutMe = props => {
   const { classes } = props;
   return (
-    <section>
-      <Grid container className={classes.root}>
-        <Grid item container md={6} direction='column'>
-          <Grid item>
-            <Typography variant='display4' className={classes.header}>
-              About Me:
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography variant='display1' className={classes.textContent}>
-              Hey I'm Ryan! I like tech, music, games, and food. Running is fun
-              and so is my girlfriend Maddie ;). Whether I am tinkering with a computer,
-              lining up double drops like Andy C, or running like im still relevant, you can be sure
-              im always having fun.
-            </Typography>
-          </Grid>
+    <Grid container component='section' className={classes.root} justify={'center'}>
+      <Grid item sm={8} container justify='space-between' alignItems='center'>
+        <Grid item sm={8} container direction='column' className={classes.textContent}>
+          <Typography variant='display4' gutterBottom>
+            About Me:
+          </Typography>
+          <Typography variant='subheading' paragraph color={'textSecondary'}>
+            Hey everyone, I'm Ryan Davis and welcome to my little corner of the web. Because Technology has
+            always played such an important role in my life, I wanted to create a space where I could express
+            myself in a way that comes naturally to me. As you might expect, there are quite a few things I want to
+            share
+            and if you continue on I'm sure you will learn a thing or two!
+          </Typography>
+          <Typography variant='subheading' paragraph color={'textSecondary'}>
+            The inspiration for this project was born from wanting to show people the many sides of who I am.
+            People, places, and events over the years have made me who I am today, and I think many of these factors
+            should
+            be remembered and serve as a point of reference. Anyone will be able to see where I have come from and
+            connect
+            with me as I move forward down my path in life.
+          </Typography>
+          <Typography variant='subheading' paragraph color={'textSecondary'}>
+            The things I do in my spare time also deserve some type of recognition, and this site will facilitate
+            a hub to all of these external activities. This space will serve as an exhibition of the work I want
+            displayed
+            and as an outlet for some of the memories I want to persist from these hobbies. Feel free to drop any
+            suggestions
+            on how I can improve this site and please enjoy your stay!
+          </Typography>
         </Grid>
-        <Grid item container md={6} direction='column' justify='center' alignItems='center'>
-          <Grid item className={classes.photoContainer}>
-            <Card>
-              <img className={classes.photo} src={SelfImg}/>
-            </Card>
-          </Grid>
-          <Grid item container justify={'space-evenly'} alignItems={'center'} className={classes.linksContainer}>
-            <Grid item>
-              <Button size={'small'} href='https://www.facebook.com/rwdavisx'>
-                <img style={{ maxWidth: 50 }} src={FB}/>
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button size={'small'} href='https://www.instagram.com/ryandavis__'>
-                <img src={Instagram} style={{ width: 50 }}/>
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button size={'small'} href='https://twitter.com/ryandavis_'>
-                <img src={Twitter} style={{ width: 50 }}/>
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button size={'small'} href='https://soundcloud.com/djrydavis'>
-                <img src={SoundCloud} style={{ width: 50 }}/>
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button size={'small'} href='https://steamcommunity.com/id/Davisdog252'>
-                <img src={Steam} style={{ width: 50 }}/>
-              </Button>
-            </Grid>
-          </Grid>
+        <Grid item container sm={4} direction='column' justify='center'>
+          <Card raised className={classes.card}>
+            <CardMedia component='img' image={SelfImg} className={classes.media}/>
+          </Card>
         </Grid>
       </Grid>
-    </section>
+    </Grid>
   );
 };
 
