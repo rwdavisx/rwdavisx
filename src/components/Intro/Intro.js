@@ -20,21 +20,21 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 8,
     paddingBottom: theme.spacing.unit * 8
   },
-  titleContainer: {
-    marginTop: 20,
-    marginBottom: 40,
-    paddingBottom: 32
-  },
   headerTitle: {
     width: 'fit-content',
     padding: 8,
     borderBottom: `2px solid ${theme.palette.secondary.main}`,
     borderTop: `2px solid ${theme.palette.secondary.main}`,
-    backgroundColor: '#FFFFFF33'
+
   },
   introText: {
     paddingBottom: theme.spacing.unit * 4,
-    marginBottom: theme.spacing.unit * 5
+    marginBottom: theme.spacing.unit * 5,
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing.unit * 4,
+      textAlign: 'center',
+      alignItems: 'center'
+    },
   },
   introCard: {
     width: '100%',
@@ -59,7 +59,7 @@ const Intro = props => {
                                         className={classes.introCard} {...itemProps} />;
   return (
     <Grid container direction={'column'} alignItems={'center'} className={classes.header} component='header'>
-      <Grid item sm={8} container direction={'column'} className={classes.introText}>
+      <Grid item xs={12} md={10} container direction={'column'} className={classes.introText}>
         <Typography className={classes.headerTitle} variant='title'>
           RYAN W. DAVIS | FULLSTACK ENGINEER
         </Typography>
@@ -68,7 +68,7 @@ const Intro = props => {
           <span>Discover a little about me<br/></span>
         </Typography>
       </Grid>
-      <Grid item sm={8} container direction={'row'} component={renderCard}>
+      <Grid item sm={12} md={10} container direction={'row'} component={renderCard}>
         <Grid item sm={12} md={8} container direction={'column'} className={classes.socialMedia} justify={'space-around'} alignItems={'center'}>
           <Typography variant={'display1'}>
             Find Me On These Networks
