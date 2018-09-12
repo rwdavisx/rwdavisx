@@ -4,6 +4,7 @@ import Theme from './utils/Theme';
 import RyAppBar from './components/AppBar/AppBar';
 import Intro from './components/Intro/Intro';
 import AboutMe from './components/AboutMe/AboutMe';
+import History from './components/History/History';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <RyAppBar/>
         <Intro/>
         <AboutMe/>
+        <History/>
       </MuiThemeProvider>
     );
   }
