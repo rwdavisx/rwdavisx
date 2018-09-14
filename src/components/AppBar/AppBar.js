@@ -74,7 +74,7 @@ const RyAppBar = props => {
           </Grid>
           <Hidden smDown>
             <Grid item md className={classes.link}>
-              <Button variant='text' className={classes.btn} fullWidth onClick={goTo.bind(this, 'home')}>HOME</Button>
+              <Button variant='text' className={classes.btn} fullWidth onClick={goTo}>HOME</Button>
             </Grid>
             <Grid item md className={classes.link}>
               <Button variant='text' className={classes.btn} fullWidth>INTERESTS</Button>
@@ -103,7 +103,7 @@ const RyAppBar = props => {
           </Hidden>
           <Hidden mdUp>
             <Grid item xs={4} className={classes.menu}>
-              <SideDrawer/>
+              <SideDrawer goTo={goTo} login={login} logout={logout} auth={props.auth}/>
             </Grid>
           </Hidden>
         </Grid>

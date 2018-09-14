@@ -3,7 +3,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import Divider from '@material-ui/core/Divider';
 import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 
@@ -47,6 +46,7 @@ class SideDrawer extends React.Component {
 
   render() {
     const { classes } = this.props;
+    const { isAuthenticated } = this.props.auth;
     const sideList = (
       <div className={classes.list}>
         <List>
@@ -55,6 +55,16 @@ class SideDrawer extends React.Component {
           <ListItem button>About</ListItem>
           <ListItem button>Resume</ListItem>
           <ListItem button>Contact</ListItem>
+            {
+              !isAuthenticated() && (
+                <ListItem button onClick={this.props.login}>Log In</ListItem>
+              )
+            }
+            {
+              isAuthenticated() && (
+                <ListItem button onClick={this.props.logout}>Log Out</ListItem>
+              )
+            }
         </List>
       </div>
     );
