@@ -71,8 +71,7 @@ class SideDrawer extends React.Component {
     return (
       <div>
         <Button variant='text' className={classes.btn} fullWidth
-                onClick={this.toggleDrawer('right', true)}
-        >
+                onClick={this.toggleDrawer('right', true)}>
           <MenuIcon className={classes.menuIcon}/>
         </Button>
         <Drawer
