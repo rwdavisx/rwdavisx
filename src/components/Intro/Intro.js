@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button/Button';
 import Typography from '@material-ui/core/Typography';
 import backgroundImg from '../../images/abstract-background.jpeg';
 import FB from './svg/F_icon.svg';
+import Resume from '../../images/resume.pdf';
 import Instagram from './svg/Instagram.svg';
 import Twitter from './svg/TwitterIcon.svg';
 import SoundCloud from './svg/SoundcloudLogo.svg';
@@ -21,7 +22,7 @@ const styles = theme => ({
     width: 'fit-content',
     padding: 8,
     borderBottom: `2px solid ${theme.palette.secondary.main}`,
-    borderTop: `2px solid ${theme.palette.secondary.main}`,
+    borderTop: `2px solid ${theme.palette.secondary.main}`
 
   },
   introText: {
@@ -31,7 +32,7 @@ const styles = theme => ({
       padding: theme.spacing.unit * 4,
       textAlign: 'center',
       alignItems: 'center'
-    },
+    }
   },
   introCard: {
     width: '100%',
@@ -66,7 +67,8 @@ const Intro = props => {
         </Typography>
       </Grid>
       <Grid item sm={12} md={10} container direction={'row'} component={renderCard}>
-        <Grid item sm={12} md={8} container direction={'column'} className={classes.socialMedia} justify={'space-around'} alignItems={'center'}>
+        <Grid item sm={12} md={8} container direction={'column'} className={classes.socialMedia}
+              justify={'space-around'} alignItems={'center'}>
           <Typography variant={'display1'}>
             Find Me On These Networks
           </Typography>
@@ -98,13 +100,22 @@ const Intro = props => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item sm md container direction={'column'} justify={'space-around'} className={classes.contact} alignItems={'center'}>
+        <Grid item sm md container direction={'column'} justify={'space-around'} className={classes.contact}
+              alignItems={'center'}>
           <Typography variant={'display1'}>
             Let's Get Connected
           </Typography>
-          <Button variant='raised' color={'secondary'} style={{ color: 'white' }} href={"mailto:rwdavisx@gmail.com"}>
-            Contact Me
-          </Button>
+          <Grid container justify={'center'}>
+            <Grid md={5}>
+              <Button variant='raised' color={'secondary'} style={{ color: 'white', minWidth: 120, marginRight: 20 }}
+                      href={'mailto:rwdavisx@gmail.com'}>
+                Contact Me
+              </Button>
+            </Grid>
+            <Grid item md={5}>
+              <Button color={'secondary'} href={Resume}>Resume</Button>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
