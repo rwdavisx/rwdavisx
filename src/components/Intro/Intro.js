@@ -105,7 +105,7 @@ const Intro = props => {
           <Typography variant={'display1'}>
             Let's Get Connected
           </Typography>
-          <Button variant='raised' color={'secondary'} style={{ color: 'white' }}>
+          <Button variant='raised' color={'secondary'} style={{ color: 'white' }} href={"mailto:rwdavisx@gmail.com"}>
             Contact Me
           </Button>
         </Grid>
