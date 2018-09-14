@@ -8,8 +8,8 @@ import AboutMe from './components/AboutMe/AboutMe';
 class App extends Component {
   render() {
     return (
-      <MuiThemeProvider theme={Theme} className="App">
-        <RyAppBar/>
+      <MuiThemeProvider theme={Theme}>
+        <RyAppBar {...this.props} />
         <Intro/>
         <AboutMe/>
       </MuiThemeProvider>
