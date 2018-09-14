@@ -1,15 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid/Grid';
 import Slide from '@material-ui/core/Slide';
-import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import WarningIcon from '@material-ui/icons/Warning';
 import CloseIcon from '@material-ui/icons/Close';
 import { amber } from '@material-ui/core/colors';
-import Icon from '@material-ui/core/Icon';
 
 const styles = theme => ({
   close: {

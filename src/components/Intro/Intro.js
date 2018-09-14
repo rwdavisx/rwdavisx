@@ -2,9 +2,6 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card/Card';
-import RunIcon from '@material-ui/icons/DirectionsRun';
-import MusicIcon from '@material-ui/icons/MusicNote';
-import ComputerIcon from '@material-ui/icons/Computer';
 import Button from '@material-ui/core/Button/Button';
 import Typography from '@material-ui/core/Typography';
 import backgroundImg from '../../images/abstract-background.jpeg';
@@ -76,27 +73,27 @@ const Intro = props => {
           <Grid container justify={'space-evenly'} alignItems={'center'}>
             <Grid item>
               <Button size={'small'} href='https://www.facebook.com/rwdavisx'>
-                <img style={{ maxWidth: 50 }} src={FB}/>
+                <img style={{ maxWidth: 50 }} alt='' src={FB}/>
               </Button>
             </Grid>
             <Grid item>
               <Button size={'small'} href='https://www.instagram.com/ryandavis__'>
-                <img src={Instagram} style={{ width: 50 }}/>
+                <img src={Instagram} alt='' style={{ width: 50 }}/>
               </Button>
             </Grid>
             <Grid item>
               <Button size={'small'} href='https://twitter.com/ryandavis_'>
-                <img src={Twitter} style={{ width: 50 }}/>
+                <img src={Twitter} alt='' style={{ width: 50 }}/>
               </Button>
             </Grid>
             <Grid item>
               <Button size={'small'} href='https://soundcloud.com/djrydavis'>
-                <img src={SoundCloud} style={{ width: 50 }}/>
+                <img src={SoundCloud} alt='' style={{ width: 50 }}/>
               </Button>
             </Grid>
             <Grid item>
               <Button size={'small'} href='https://steamcommunity.com/id/Davisdog252'>
-                <img src={Steam} style={{ width: 50 }}/>
+                <img src={Steam} alt='' style={{ width: 50 }}/>
               </Button>
             </Grid>
           </Grid>

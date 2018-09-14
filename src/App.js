@@ -4,6 +4,7 @@ import Theme from './utils/Theme';
 import RyAppBar from './components/AppBar/AppBar';
 import Intro from './components/Intro/Intro';
 import AboutMe from './components/AboutMe/AboutMe';
+import Construction from './components/Construction/Construction';
 
 const App = props => {
   return (
@@ -11,6 +12,7 @@ const App = props => {
       <RyAppBar {...props} />
       <Intro {...props}/>
       <AboutMe/>
+      <Construction/>
     </MuiThemeProvider>
   );
 };
