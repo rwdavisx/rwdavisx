@@ -46,7 +46,21 @@ const styles = theme => ({
 });
 
 const RyAppBar = props => {
+  const goTo = (route) => {
+    props.history.replace(`/${route}`);
+  };
+
+  const login = () => {
+    props.auth.login();
+  };
+
+  const logout = () => {
+    props.auth.logout();
+  };
+
   const { classes } = props;
+  const { isAuthenticated } = props.auth;
+
   return (
     <AppBar position={'sticky'}>
       <Toolbar variant='dense'>
@@ -59,25 +73,37 @@ const RyAppBar = props => {
             </a>
           </Grid>
           <Hidden smDown>
-            <Grid item md={2} className={classes.link}>
-              <Button variant='text' className={classes.btn} fullWidth>HOME</Button>
+            <Grid item md className={classes.link}>
+              <Button variant='text' className={classes.btn} fullWidth onClick={goTo}>HOME</Button>
             </Grid>
-            <Grid item md={2} className={classes.link}>
+            <Grid item md className={classes.link}>
               <Button variant='text' className={classes.btn} fullWidth>INTERESTS</Button>
             </Grid>
-            <Grid item md={2} className={classes.link}>
+            <Grid item md className={classes.link}>
               <Button variant='text' className={classes.btn} fullWidth>ABOUT</Button>
             </Grid>
-            <Grid item md={2} className={classes.link}>
+            <Grid item md className={classes.link}>
               <Button variant='text' className={classes.btn} fullWidth>RESUME</Button>
             </Grid>
-            <Grid item md={2} className={classes.link}>
+            <Grid item md className={classes.link}>
               <Button variant='text' className={classes.btn} fullWidth>CONTACT</Button>
+            </Grid>
+            <Grid item md className={classes.link}>
+              {
+                !isAuthenticated() && (
+                  <Button variant='text' className={classes.btn} fullWidth onClick={login}>Log In</Button>
+                )
+              }
+              {
+                isAuthenticated() && (
+                  <Button variant='text' className={classes.btn} fullWidth onClick={logout}>Log Out</Button>
+                )
+              }
             </Grid>
           </Hidden>
           <Hidden mdUp>
             <Grid item xs={4} className={classes.menu}>
-              <SideDrawer/>
+              <SideDrawer goTo={goTo} login={login} logout={logout} auth={props.auth}/>
             </Grid>
           </Hidden>
         </Grid>
