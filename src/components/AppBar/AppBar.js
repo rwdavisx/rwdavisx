@@ -74,7 +74,7 @@ const RyAppBar = props => {
           </Grid>
           <Hidden smDown>
             <Grid item md className={classes.link}>
-              <Button variant='text' className={classes.btn} fullWidth onClick={goTo}>HOME</Button>
+              <Button variant='text' className={classes.btn} fullWidth>HOME</Button>
             </Grid>
             <Grid item md className={classes.link}>
               <Button variant='text' className={classes.btn} fullWidth>INTERESTS</Button>

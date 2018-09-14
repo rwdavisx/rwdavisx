@@ -46,6 +46,12 @@ const styles = theme => ({
   contact: {
     height: 200
   },
+  test: {
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      alignItems: 'center'
+    },
+  },
   introCardRoot: {
     textAlign: 'center'
   }
@@ -105,15 +111,15 @@ const Intro = props => {
           <Typography variant={'display1'}>
             Let's Get Connected
           </Typography>
-          <Grid container justify={'center'}>
-            <Grid md={5}>
-              <Button variant='raised' color={'secondary'} style={{ color: 'white', minWidth: 120, marginRight: 20 }}
-                      href={'mailto:rwdavisx@gmail.com'}>
+          <Grid container justify={'space-around'} className={classes.test}>
+            <Grid xs={6} md={4}>
+              <Button variant='raised' color={'secondary'} style={{ color: 'white', minWidth: 120, marginBottom: 20}}
+                      href={'mailto:rwdavisx@gmail.com'} fullWidth>
                 Contact Me
               </Button>
             </Grid>
-            <Grid item md={5}>
-              <Button color={'secondary'} href={Resume}>Resume</Button>
+            <Grid item xs={6} md={4}>
+              <Button color={'secondary'} href={Resume} fullWidth style={{marginBottom: 20}}>Resume</Button>
             </Grid>
           </Grid>
         </Grid>
